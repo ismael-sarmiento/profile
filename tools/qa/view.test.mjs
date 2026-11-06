@@ -27,7 +27,7 @@ function fixture(href, reduced = false) {
 
 test('direct summary links remove hidden anchors but retain visible sections and other URL parameters', () => {
   for (const [anchor, expected] of [['timeline', ''], ['story', ''], ['contact', '#contact'], ['summary', '#summary']]) {
-    const h = fixture(`https://example.test/cv/?view=summary&lang=en&source=profile#${anchor}`);
+    const h = fixture(`https://example.test/profile/?view=summary&lang=en&source=profile#${anchor}`);
     h.initView();
     assert.equal(h.isSummary(), true);
     assert.equal(h.url.hash, expected);
@@ -39,7 +39,7 @@ test('direct summary links remove hidden anchors but retain visible sections and
 });
 test('mode button clears the old anchor in both directions and retains the scroll motion preference', () => {
   for (const reduced of [false, true]) {
-    const h = fixture('https://example.test/cv/?lang=en#timeline', reduced);
+    const h = fixture('https://example.test/profile/?lang=en#timeline', reduced);
     h.initView(); h.button();
     assert.equal(h.isSummary(), true); assert.equal(h.url.hash, '');
     assert.equal(h.url.searchParams.get('view'), 'summary');
@@ -51,7 +51,7 @@ test('mode button clears the old anchor in both directions and retains the scrol
   }
 });
 test('leaving summary programmatically preserves an anchor for normal detail navigation', () => {
-  const h = fixture('https://example.test/cv/?view=summary&lang=en#timeline');
+  const h = fixture('https://example.test/profile/?view=summary&lang=en#timeline');
   h.setView(false);
   assert.equal(h.url.hash, '#timeline');
   assert.equal(h.url.searchParams.has('view'), false);

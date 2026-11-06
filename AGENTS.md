@@ -1,4 +1,4 @@
-# AGENTS.md — cv (CV Online)
+# AGENTS.md — profile (IsProfile · CV Online)
 
 ## Parent
 
@@ -7,11 +7,12 @@ Global roots (L0):
 - Codex: `~/.codex/AGENTS.md`
 
 Sibling sites on the same origin (shared design system and standards):
-- Portada `ismael-sarmiento.github.io` (owns `/assets/ds/`) · IsAcademy `isacademy`
+- Portada `ismael-sarmiento.github.io` (owns `/assets/ds/`, served at `https://isuniverse.dev/`) · IsAcademy `academy` · IsGame `game`
+- The old repository `cv` only redirects `/cv/` to `/profile/` (shared links and printed QR codes): never delete it.
 
 ## Purpose
 
-Entry point for agents working on CV Online (`https://ismael-sarmiento.github.io/cv/`). Personal project of Ismael
+Entry point for agents working on IsProfile · CV Online (`https://isuniverse.dev/profile/`). Personal project of Ismael
 Sarmiento; only the global L0 protocols apply (Plan al Milímetro before each task, close-out recap after).
 
 ## Source of truth

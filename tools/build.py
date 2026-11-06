@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Builds CV Online from data/content.json, the same way IsAcademy works:
+"""Builds IsProfile · CV Online (isuniverse.dev/profile/) from data/content.json, the same way IsAcademy works:
 
-  index.html            the page, written in Spanish with data-i18n keys (one page; English is /cv/?lang=en)
+  index.html            the page, written in Spanish with data-i18n keys (one page; English is /profile/?lang=en)
   i18n/es.json, en.json  { "key": "text" } dictionaries for the shared i18n module (/assets/ds/i18n.js)
   sitemap.xml
   404.html               copy of the portada's 404 page (build the portada first)
@@ -22,8 +22,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 VERSION = sys.argv[1] if len(sys.argv) > 1 else '20261014a'
 D = json.loads((ROOT / 'data/content.json').read_text())
-SITE = 'https://ismael-sarmiento.github.io'
-BASE = f'{SITE}/cv/'
+SITE = 'https://isuniverse.dev'
+BASE = f'{SITE}/profile/'
 TODAY = '2026-11-05'
 CF_TOKEN = '1af8978bb58b4f6cb3771790a71c784c'  # Cloudflare Web Analytics (shared with the portada)
 
@@ -77,7 +77,7 @@ BOOT = ("var d=document.documentElement;try{var t=localStorage.getItem('isa-them
 BOOT += '\n' + (ROOT.parent / 'ismael-sarmiento.github.io/assets/ds/startup.js').read_text()
 DS_MODULES = ['/assets/ds/ds.js', '/assets/ds/frame-guard.js', '/assets/ds/views.js', '/assets/ds/favicon.js', '/assets/ds/contact.js', '/assets/ds/i18n.js', '/assets/ds/signature.js', '/assets/ds/fx.js', '/assets/ds/intro.js',
               '/assets/ds/avatar.js', '/assets/ds/assistant.js']
-MODULES = DS_MODULES + sorted(f'/cv/js/{f.name}' for f in (ROOT / 'js').glob('*.js'))
+MODULES = DS_MODULES + sorted(f'/profile/js/{f.name}' for f in (ROOT / 'js').glob('*.js'))
 IMPORT_MAP = json.dumps({'imports': {m: f'{m}?v={VERSION}' for m in MODULES}}, separators=(',', ':'))
 CSP = ("default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://challenges.cloudflare.com "
        f"'sha256-{sha(BOOT)}' 'sha256-{sha(IMPORT_MAP)}'; style-src 'self'; img-src 'self' data:; font-src 'self'; "
@@ -144,7 +144,7 @@ def structured_data():
             'jobTitle': 'Head of Data Management',
             'hasOccupation': [{'@type': 'Occupation', 'name': n} for n in ('Head of Data Management', 'Lead Data Engineer')],
             'worksFor': {'@type': 'Organization', 'name': 'Savana', 'url': m['currentCompany']},
-            'founder': {'@id': f'{SITE}/isacademy/#org'},
+            'founder': {'@id': f'{SITE}/academy/#org'},
             'memberOf': {'@type': 'Organization', 'name': 'DAMA Spain', 'url': 'https://www.damaspain.org/'},
             'hasCredential': [
                 {'@type': 'EducationalOccupationalCredential', 'name': 'CDMP Certification – Associate', 'credentialCategory': 'certification',
@@ -207,7 +207,7 @@ def head():
   <meta property="og:url" content="{BASE}">
   <meta property="og:title" content="{e(m['title']['es'])}">
   <meta property="og:description" content="{e(D['hero']['subtitle']['es'])}">
-  <meta property="og:image" content="{SITE}/cv/assets/brand/og.png">
+  <meta property="og:image" content="{SITE}/profile/assets/brand/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="{e(m['title']['es'])}">
@@ -228,10 +228,10 @@ def head():
   <link rel="stylesheet" href="{v('/assets/ds/assistant.css')}">
   <link rel="stylesheet" href="{v('/assets/ds/portrait.css')}">
   <link rel="stylesheet" href="{v('/assets/ds/circuit.css')}">
-  <link rel="stylesheet" href="{v('/cv/css/cv.css')}">
-  <link rel="stylesheet" href="{v('/cv/css/print.css')}" media="print">
+  <link rel="stylesheet" href="{v('/profile/css/cv.css')}">
+  <link rel="stylesheet" href="{v('/profile/css/print.css')}" media="print">
   <script type="importmap">{IMPORT_MAP}</script>
-  <script type="module" data-startup-entry src="{v('/cv/js/app.js')}"></script>
+  <script type="module" data-startup-entry src="{v('/profile/js/app.js')}"></script>
   <script type="application/ld+json">{json.dumps(structured_data(), ensure_ascii=False)}</script>
   <script type="application/json" id="cv-data">{data_block}</script>
 </head>'''
@@ -239,7 +239,7 @@ def head():
 # the PDF / printed CV opens with the signature and the contact line (hidden on screen; css/print.css shows it)
 PRINT_HEAD = ('<div class="print-head" aria-hidden="true">'
               + SIG.replace('is-edge', 'pr-edge').replace('is-ink', 'pr-ink')
-              + '<p class="print-contact"><a href="mailto:ismaelantonio.professional@gmail.com">ismaelantonio.professional@gmail.com</a><br><a href="tel:+34613371874">+34 613 371 874</a> · <a href="https://wa.me/34613371874" rel="noopener">WhatsApp</a><br><a href="https://www.linkedin.com/in/ismael-sarmiento/" rel="noopener me">linkedin.com/in/ismael-sarmiento</a><br><a href="https://ismael-sarmiento.github.io/cv/" data-i18n-href="ui.cv.printCvHref" rel="noopener">ismael-sarmiento.github.io/cv/</a></p></div>')
+              + '<p class="print-contact"><a href="mailto:ismaelantonio.professional@gmail.com">ismaelantonio.professional@gmail.com</a><br><a href="tel:+34613371874">+34 613 371 874</a> · <a href="https://wa.me/34613371874" rel="noopener">WhatsApp</a><br><a href="https://www.linkedin.com/in/ismael-sarmiento/" rel="noopener me">linkedin.com/in/ismael-sarmiento</a><br><a href="https://isuniverse.dev/profile/" data-i18n-href="ui.cv.printCvHref" rel="noopener">isuniverse.dev/profile/</a></p></div>')
 
 
 # the circuit lines of the brand (/assets/ds/circuit.css), the same two drawings as Inicio (portada tools/build.py):
@@ -266,17 +266,17 @@ def intro():
     {CIRCUIT_INTRO}
     <div class="intro-top">{toggles()}<button class="btn" type="button" data-action="skip">{T('ui.cv.skip')}</button></div>
     <div class="intro-stage">
-      <p class="sr-only" id="intro-title">Ismael Sarmiento · CV Online</p>
+      <p class="sr-only" id="intro-title">Ismael Sarmiento · IsProfile · CV Online</p>
       <div class="intro-sig">{SIG}</div>
       <div class="intro-after">
-        <p class="pill intro-tag">CV Online</p>
+        <p class="pill intro-tag">IsProfile · CV Online</p>
         {T('hero.subtitle', 'p', 'intro-hook')}
         <div class="intro-milestones" aria-hidden="true"><div class="intro-segs">{segs}</div><p class="intro-step"></p></div>
         <ol class="sr-only" {A('aria-label', 'ui.cv.introLabel')}>{steps}</ol>
       </div>
       <div class="intro-actions">
         <button class="btn btn-primary btn-lg btn-arrow" type="button" data-action="enter">{T('ui.cv.enter')}</button>
-        <a class="btn btn-lg" href="/cv/ismael-sarmiento-cv.pdf" data-pdf download>{DOWNLOAD}{T('ui.cv.introPdf')}</a>
+        <a class="btn btn-lg" href="/profile/ismael-sarmiento-cv.pdf" data-pdf download>{DOWNLOAD}{T('ui.cv.introPdf')}</a>
       </div>
     </div>
   </div>'''
@@ -286,7 +286,7 @@ def topbar():
     return f'''<header class="topbar">
     <div class="container topbar-row">
       <a class="brand" href="/" data-i18n-href="ui.cv.homeHref" aria-label="Ismael Sarmiento"><span class="brand-is" aria-hidden="true">Is</span><span class="brand-name" aria-hidden="true">mael Sarmiento</span></a>
-      <a class="pdf-chip" href="/cv/ismael-sarmiento-cv.pdf" data-pdf download {A('aria-label', 'ui.cv.pdf')}>{DOWNLOAD}{T('ui.navigation.pdf')}</a>
+      <a class="pdf-chip" href="/profile/ismael-sarmiento-cv.pdf" data-pdf download {A('aria-label', 'ui.cv.pdf')}>{DOWNLOAD}{T('ui.navigation.pdf')}</a>
       <nav class="nav" {A('aria-label', 'ui.cv.primaryNav')}>
         <a href="#summary" data-nav="summary">{T('ui.navigation.summary')}</a>
         <a href="#story" data-nav="story">{T('ui.navigation.story')}</a>
@@ -385,7 +385,7 @@ def main():
       {CIRCUIT_HERO}
       <div class="container hero-grid">
         <div class="hero-copy stagger">
-          <p class="eyebrow reveal">Ismael Sarmiento · CV Online</p>
+          <p class="eyebrow reveal">Ismael Sarmiento · IsProfile · CV Online</p>
           <h1 id="hero-title" class="reveal">{T('hero.headlinePrimary', 'span', 'h1-main')} {T('hero.headlineSecondary', 'span', 'h1-sub')}</h1>
           {T('hero.subtitle', 'p', 'lead reveal')}
           <ul class="ticks hero-facts reveal">{li('hero.quickFacts')}</ul>
@@ -503,13 +503,13 @@ def footer():
       <span>© <span data-year>2026</span> Ismael Sarmiento</span>
       <!-- the footer of every site of the universe (portada tools/build.py): the other sites, the ways to reach Ismael, Privacy, back to top -->
       <nav class="footer-links" aria-label="Ismael Sarmiento">
-        <a href="/" data-i18n-href="ui.cv.homeHref">{T('ui.cv.home')}</a><a href="/isacademy/" data-i18n-href="ui.cv.isacademyHref">IsAcademy</a><a href="/isgame/" data-i18n-href="ui.cv.isgameHref">IsGame</a>
+        <a href="/" data-i18n-href="ui.cv.homeHref">{T('ui.cv.home')}</a><a href="/academy/" data-i18n-href="ui.cv.isacademyHref">IsAcademy</a><a href="/game/" data-i18n-href="ui.cv.isgameHref">IsGame</a>
         {way('WhatsApp', 'WhatsApp')}{way('Email', T('ui.cv.form.mail'))}
         <a href="{e(D['meta']['linkedin'])}" rel="noopener me">LinkedIn</a><a href="{e(D['meta']['github'])}" rel="noopener me">GitHub</a>
         <a href="/privacy/" data-i18n-href="ui.cv.privacyHref">{T('ui.cv.privacyLabel')}</a>
       </nav>
       <a class="footer-top" href="#top">{T('ui.cv.top')}</a>
-      <p class="print-foot">{T('ui.cv.printOnline')}: <a href="https://ismael-sarmiento.github.io/cv/" data-i18n-href="ui.cv.printCvHref" rel="noopener">ismael-sarmiento.github.io/cv/</a> · IsAcademy: <a href="https://ismael-sarmiento.github.io/isacademy/" data-i18n-href="ui.cv.printIsaHref" rel="noopener">ismael-sarmiento.github.io/isacademy/</a></p>
+      <p class="print-foot">{T('ui.cv.printOnline')}: <a href="https://isuniverse.dev/profile/" data-i18n-href="ui.cv.printCvHref" rel="noopener">isuniverse.dev/profile/</a> · IsAcademy: <a href="https://isuniverse.dev/academy/" data-i18n-href="ui.cv.printIsaHref" rel="noopener">isuniverse.dev/academy/</a></p>
     </div>
   </footer>'''
 
@@ -549,8 +549,8 @@ if __name__ == '__main__':
     for lang in ('es', 'en'):
         (ROOT / f'i18n/{lang}.json').write_text(json.dumps(DICT[lang], ensure_ascii=False, indent=0))
     (ROOT / 'sitemap.xml').write_text(SITEMAP)
-    # unknown /cv/... addresses get the portada's 404 (same origin, absolute paths); build the portada first
+    # unknown /profile/... addresses get the portada's 404 (same origin, absolute paths); build the portada first
     hub_404 = ROOT.parent / 'ismael-sarmiento.github.io' / '404.html'
     if hub_404.exists():
         (ROOT / '404.html').write_text(hub_404.read_text())
-    print(f'built /cv/ (es, i18n/en.json with {len(DICT["en"])} keys) and sitemap.xml (version {VERSION})')
+    print(f'built /profile/ (es, i18n/en.json with {len(DICT["en"])} keys) and sitemap.xml (version {VERSION})')

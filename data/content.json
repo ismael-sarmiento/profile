@@ -1,20 +1,20 @@
 {
   "meta": {
     "siteName": "Ismael Sarmiento",
-    "siteUrl": "https://ismael-sarmiento.github.io/cv/",
+    "siteUrl": "https://isuniverse.dev/profile/",
     "email": "ismaelantonio.professional@gmail.com",
     "linkedin": "https://www.linkedin.com/in/ismael-sarmiento/",
     "github": "https://github.com/ismael-sarmiento",
     "currentCompany": "https://savanamed.com/about-us/",
     "title": {
-      "es": "Ismael Sarmiento · CV Online · Head of Data Management en Savana",
-      "en": "Ismael Sarmiento · CV Online · Head of Data Management at Savana"
+      "es": "Ismael Sarmiento · IsProfile · CV Online · Head of Data Management en Savana",
+      "en": "Ismael Sarmiento · IsProfile · CV Online · Head of Data Management at Savana"
     },
     "description": {
-      "es": "CV Online de Ismael Sarmiento, Head of Data Management en Savana y antes Lead Data Engineer. Gobierno del dato, interoperabilidad clínica y calidad del dato con HL7 FHIR, OMOP CDM y la UNE 0081.",
-      "en": "CV Online of Ismael Sarmiento, Head of Data Management at Savana and formerly Lead Data Engineer. Data governance, clinical interoperability and data quality with HL7 FHIR, OMOP CDM and UNE 0081."
+      "es": "IsProfile, el CV Online de Ismael Sarmiento, Head of Data Management en Savana y antes Lead Data Engineer. Gobierno del dato, interoperabilidad clínica y calidad del dato con HL7 FHIR, OMOP CDM y la UNE 0081.",
+      "en": "IsProfile, the CV Online of Ismael Sarmiento, Head of Data Management at Savana and formerly Lead Data Engineer. Data governance, clinical interoperability and data quality with HL7 FHIR, OMOP CDM and UNE 0081."
     },
-    "homeUrl": "https://ismael-sarmiento.github.io/"
+    "homeUrl": "https://isuniverse.dev/"
   },
   "ui": {
     "es": {
@@ -64,7 +64,7 @@
         "noMatch": "No tengo una respuesta exacta para eso en esta versión beta. Puedo responder sobre experiencia, capacidades, seguridad del asistente, docencia, IsGame, contacto o límites de privacidad."
       },
       "cv": {
-        "tag": "CV Online",
+        "tag": "IsProfile · CV Online",
         "home": "Inicio",
         "enter": "Entrar al CV",
         "primaryNav": "Principal",
@@ -106,16 +106,16 @@
         "langShort": "EN",
         "current": "Actual",
         "homeHref": "/",
-        "isacademyHref": "/isacademy/",
-        "isgameHref": "/isgame/",
+        "isacademyHref": "/academy/",
+        "isgameHref": "/game/",
         "top": "Volver arriba",
         "summaryNotice": "Modo resumen: estás viendo lo esencial del CV.",
         "pdf": "Descargar CV en PDF",
-        "pdfHref": "/cv/ismael-sarmiento-cv.pdf",
+        "pdfHref": "/profile/ismael-sarmiento-cv.pdf",
         "introPdf": "Descargar PDF",
         "printOnline": "Versión interactiva",
-        "printCvHref": "https://ismael-sarmiento.github.io/cv/",
-        "printIsaHref": "https://ismael-sarmiento.github.io/isacademy/",
+        "printCvHref": "https://isuniverse.dev/profile/",
+        "printIsaHref": "https://isuniverse.dev/academy/",
         "form": {
           "name": "Nombre",
           "email": "Email",
@@ -189,7 +189,7 @@
         "noMatch": "I do not have an exact answer for that in this beta version. I can answer about experience, capabilities, assistant safety, teaching, IsGame, contact, or privacy limits."
       },
       "cv": {
-        "tag": "CV Online",
+        "tag": "IsProfile · CV Online",
         "home": "Home",
         "enter": "Enter the CV",
         "primaryNav": "Primary",
@@ -231,16 +231,16 @@
         "langShort": "ES",
         "current": "Current",
         "homeHref": "/?lang=en",
-        "isacademyHref": "/isacademy/?lang=en",
-        "isgameHref": "/isgame/?lang=en",
+        "isacademyHref": "/academy/?lang=en",
+        "isgameHref": "/game/?lang=en",
         "top": "Back to top",
         "summaryNotice": "Summary mode: you are seeing the essentials of the CV.",
         "pdf": "Download CV as PDF",
-        "pdfHref": "/cv/ismael-sarmiento-cv-en.pdf",
+        "pdfHref": "/profile/ismael-sarmiento-cv-en.pdf",
         "introPdf": "Download PDF",
         "printOnline": "Interactive version",
-        "printCvHref": "https://ismael-sarmiento.github.io/cv/?lang=en",
-        "printIsaHref": "https://ismael-sarmiento.github.io/isacademy/?lang=en",
+        "printCvHref": "https://isuniverse.dev/profile/?lang=en",
+        "printIsaHref": "https://isuniverse.dev/academy/?lang=en",
         "form": {
           "name": "Name",
           "email": "Email",
@@ -1057,11 +1057,11 @@
           "actions": [
             {
               "label": "Jugar a IsGame",
-              "href": "/isgame/"
+              "href": "/game/"
             },
             {
               "label": "Conocer IsAcademy",
-              "href": "/isacademy/"
+              "href": "/academy/"
             }
           ]
         },
@@ -1259,11 +1259,11 @@
           "actions": [
             {
               "label": "Play IsGame",
-              "href": "/isgame/?lang=en"
+              "href": "/game/?lang=en"
             },
             {
               "label": "Discover IsAcademy",
-              "href": "/isacademy/?lang=en"
+              "href": "/academy/?lang=en"
             }
           ]
         },

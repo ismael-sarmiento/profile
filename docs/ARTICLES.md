@@ -2,9 +2,9 @@
 
 Articles are standalone bilingual HTML pages, published from day one in both languages:
 
-- Spanish: `articles/<slug>/index.html` → `https://ismael-sarmiento.github.io/cv/articles/<slug>/`
-- English: `articles/<slug>/en.html` → `https://ismael-sarmiento.github.io/cv/articles/<slug>/en.html` (no `/en/` folder,
-  as everywhere else; the English CV is `/cv/?lang=en`)
+- Spanish: `articles/<slug>/index.html` → `https://isuniverse.dev/profile/articles/<slug>/`
+- English: `articles/<slug>/en.html` → `https://isuniverse.dev/profile/articles/<slug>/en.html` (no `/en/` folder,
+  as everywhere else; the English CV is `/profile/?lang=en`)
 
 ## Workflow
 

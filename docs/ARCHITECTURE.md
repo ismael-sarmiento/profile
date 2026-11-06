@@ -1,9 +1,10 @@
-# CV Online · architecture
+# IsProfile · CV Online · architecture
 
 ## Where it lives
 
-- Repository `ismael-sarmiento/cv`, published by GitHub Pages at `https://ismael-sarmiento.github.io/cv/`.
-- One page: Spanish at `/cv/`, English at `/cv/?lang=en` (shared i18n module, as in IsAcademy). Old addresses
+- Repository `ismael-sarmiento/profile` (a copy with history of `cv`, which now only redirects `/cv/` here), published by
+  GitHub Pages at `https://isuniverse.dev/profile/`.
+- One page: Spanish at `/profile/`, English at `/profile/?lang=en` (shared i18n module, as in IsAcademy). Old addresses
   (`/index_en.html`, `/articles/`) are redirected by the portada.
 - It depends on the portada repository (`ismael-sarmiento.github.io`) for the shared design system in `/assets/ds/`:
   `tokens.css`, `base.css`, `assistant.css`, `ds.js` (theme, reveal, top bar, spotlight), `i18n.js` (languages),

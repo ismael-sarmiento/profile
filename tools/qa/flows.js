@@ -1,4 +1,4 @@
-// CV Online · flows battery. Paste in the browser console on /cv/ (local universe site) before publishing.
+// CV Online · flows battery. Paste in the browser console on /profile/ (local universe site) before publishing.
 // Every check prints PASS or FAIL; nothing is sent anywhere.
 (async () => {
   const R = []; const ok = (n, c) => R.push((c ? 'PASS ' : 'FAIL ') + n); const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -58,12 +58,12 @@
   const pdfs = () => [...new Set([...document.querySelectorAll('[data-pdf]')].map(x => x.getAttribute('href')))];
   const dark = document.documentElement.dataset.theme === 'dark' || (!document.documentElement.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
   ok('two PDF links (bar, intro) share one file', document.querySelectorAll('[data-pdf]').length === 2 && pdfs().length === 1);
-  ok('PDF of the language and theme shown', pdfs()[0] === `/cv/ismael-sarmiento-cv${dark ? '-dark' : ''}.pdf`);
+  ok('PDF of the language and theme shown', pdfs()[0] === `/profile/ismael-sarmiento-cv${dark ? '-dark' : ''}.pdf`);
   document.querySelector('.topbar [data-action=theme]').click(); await sleep(50);
-  ok('changing the theme changes the PDF', pdfs()[0] === `/cv/ismael-sarmiento-cv${dark ? '' : '-dark'}.pdf`);
+  ok('changing the theme changes the PDF', pdfs()[0] === `/profile/ismael-sarmiento-cv${dark ? '' : '-dark'}.pdf`);
   document.querySelector('.topbar [data-action=theme]').click();
   document.querySelector('.topbar [data-action=lang]').click(); await sleep(400);
-  ok('changing the language changes the PDF', pdfs()[0] === `/cv/ismael-sarmiento-cv-en${dark ? '-dark' : ''}.pdf`);
+  ok('changing the language changes the PDF', pdfs()[0] === `/profile/ismael-sarmiento-cv-en${dark ? '-dark' : ''}.pdf`);
   document.querySelector('.topbar [data-action=lang]').click(); await sleep(400);
   ok('the intro offers «Entrar al CV» and «Descargar PDF»', document.querySelectorAll('#intro .intro-actions .btn').length === 2);
   ok('no DataHub or Power BI → Superset (LinkedIn rule)', !/DataHub|Power BI|Superset/.test(document.body.innerText));

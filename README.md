@@ -1,12 +1,13 @@
-# Ismael Sarmiento · CV Online
+# Ismael Sarmiento · IsProfile · CV Online
 
 > *Online CV of Ismael Sarmiento, Head of Data Management at Savana. Spanish and English.*
 
 CV web de **Ismael Sarmiento**, Head of Data Management en Savana y antes Lead Data Engineer: gobierno del dato,
 interoperabilidad clínica, calidad de datos de extremo a extremo y plataformas fiables.
 
-- **Web:** https://ismael-sarmiento.github.io/cv/ (español) · [versión en inglés](https://ismael-sarmiento.github.io/cv/?lang=en)
-- **Portada:** https://ismael-sarmiento.github.io/ · **Academia:** [IsAcademy](https://ismael-sarmiento.github.io/isacademy/)
+- **Repositorio:** `ismael-sarmiento/profile`, copia con historial de `cv` (que ahora solo redirige `/cv/` aquí).
+- **Web:** https://isuniverse.dev/profile/ (español) · [versión en inglés](https://isuniverse.dev/profile/?lang=en)
+- **Portada:** https://isuniverse.dev/ · **Academia:** [IsAcademy](https://isuniverse.dev/academy/)
 - **Hosting:** GitHub Pages, sitio 100 % estático. Todo el texto está en el HTML; el JavaScript solo añade comportamiento.
 - **Idiomas:** español por defecto e inglés con `?lang=en`, como IsAcademy · **Temas:** claro y oscuro (idioma y tema se
   comparten con la portada e IsAcademy).
@@ -56,7 +57,7 @@ El sistema de diseño compartido (tokens, componentes, idiomas, firma y Alan) vi
 
 ## Despliegue
 
-GitHub Pages publica la rama `main` en https://ismael-sarmiento.github.io/cv/ en cada cambio.
+GitHub Pages publica la rama `main` en https://isuniverse.dev/profile/ en cada cambio.
 
 ## Documentación
 

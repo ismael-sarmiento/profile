@@ -20,7 +20,7 @@ async function boot() {
   if (startup.isFailed()) return;
   const VERSION = new URL(import.meta.url).searchParams.get('v') || 'dev';
   const data = JSON.parse(document.getElementById('cv-data').textContent);
-  const i18n = createI18n({ base: 'https://ismael-sarmiento.github.io/cv/', dict: code => `/cv/i18n/${code}.json?v=${VERSION}` });
+  const i18n = createI18n({ base: 'https://isuniverse.dev/profile/', dict: code => `/profile/i18n/${code}.json?v=${VERSION}` });
 
   initDesignSystem();
   // the hero is the first screen: it rises on load (staggered), never waiting for a scroll that may not come
