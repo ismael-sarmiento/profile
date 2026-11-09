@@ -1,4 +1,4 @@
-# IsProfile · CV Online · architecture
+# IsProfile · architecture
 
 ## Where it lives
 

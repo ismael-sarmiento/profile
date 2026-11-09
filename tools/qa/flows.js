@@ -1,4 +1,4 @@
-// CV Online · flows battery. Paste in the browser console on /profile/ (local universe site) before publishing.
+// IsProfile · flows battery. Paste in the browser console on /profile/ (local universe site) before publishing.
 // Every check prints PASS or FAIL; nothing is sent anywhere.
 (async () => {
   const R = []; const ok = (n, c) => R.push((c ? 'PASS ' : 'FAIL ') + n); const sleep = ms => new Promise(r => setTimeout(r, ms));

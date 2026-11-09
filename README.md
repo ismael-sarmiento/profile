@@ -1,4 +1,4 @@
-# Ismael Sarmiento · IsProfile · CV Online
+# Ismael Sarmiento · IsProfile
 
 > *Online CV of Ismael Sarmiento, Head of Data Management at Savana. Spanish and English.*
 

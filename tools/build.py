@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds IsProfile · CV Online (isuniverse.dev/profile/) from data/content.json, the same way IsAcademy works:
+"""Builds IsProfile (isuniverse.dev/profile/) from data/content.json, the same way IsAcademy works:
 
   index.html            the page, written in Spanish with data-i18n keys (one page; English is /profile/?lang=en)
   i18n/es.json, en.json  { "key": "text" } dictionaries for the shared i18n module (/assets/ds/i18n.js)
@@ -266,10 +266,10 @@ def intro():
     {CIRCUIT_INTRO}
     <div class="intro-top">{toggles()}<button class="btn" type="button" data-action="skip">{T('ui.cv.skip')}</button></div>
     <div class="intro-stage">
-      <p class="sr-only" id="intro-title">Ismael Sarmiento · IsProfile · CV Online</p>
+      <p class="sr-only" id="intro-title">Ismael Sarmiento · IsProfile</p>
       <div class="intro-sig">{SIG}</div>
       <div class="intro-after">
-        <p class="pill intro-tag">IsProfile · CV Online</p>
+        <p class="pill intro-tag">IsProfile</p>
         {T('hero.subtitle', 'p', 'intro-hook')}
         <div class="intro-milestones" aria-hidden="true"><div class="intro-segs">{segs}</div><p class="intro-step"></p></div>
         <ol class="sr-only" {A('aria-label', 'ui.cv.introLabel')}>{steps}</ol>
@@ -385,7 +385,7 @@ def main():
       {CIRCUIT_HERO}
       <div class="container hero-grid">
         <div class="hero-copy stagger">
-          <p class="eyebrow reveal">Ismael Sarmiento · IsProfile · CV Online</p>
+          <p class="eyebrow reveal">Ismael Sarmiento · IsProfile</p>
           <h1 id="hero-title" class="reveal">{T('hero.headlinePrimary', 'span', 'h1-main')} {T('hero.headlineSecondary', 'span', 'h1-sub')}</h1>
           {T('hero.subtitle', 'p', 'lead reveal')}
           <ul class="ticks hero-facts reveal">{li('hero.quickFacts')}</ul>

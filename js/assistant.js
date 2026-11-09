@@ -1,4 +1,4 @@
-// Alan on CV Online: the assistant shared with Inicio and IsAcademy (/assets/ds/assistant.js), fed with the public FAQ of the CV.
+// Alan on IsProfile: the assistant shared with Inicio and IsAcademy (/assets/ds/assistant.js), fed with the public FAQ of the CV.
 // Local and private (no network, no external model); one floating button, as on the other sites.
 import { createAssistant, faqMatcher as matcher } from '/assets/ds/assistant.js';
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Writes the downloadable PDFs of CV Online with headless Chrome, from the locally served site (css/print.css):
+"""Writes the downloadable PDFs of IsProfile with headless Chrome, from the locally served site (css/print.css):
 
   ismael-sarmiento-cv.pdf           Spanish, light   (/profile/?pdf)
   ismael-sarmiento-cv-en.pdf        English, light   (/profile/?lang=en&pdf)

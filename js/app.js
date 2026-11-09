@@ -1,4 +1,4 @@
-// CV Online entry point: wires the shared design system (theme, languages, signature, Alan) and the CV modules.
+// IsProfile entry point: wires the shared design system (theme, languages, signature, Alan) and the CV modules.
 // All text is already in the HTML (tools/build.py); English comes from i18n/en.json with ?lang=en, as in IsAcademy.
 import { initDesignSystem } from '/assets/ds/ds.js';
 import { createI18n } from '/assets/ds/i18n.js';

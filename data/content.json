@@ -7,12 +7,12 @@
     "github": "https://github.com/ismael-sarmiento",
     "currentCompany": "https://savanamed.com/about-us/",
     "title": {
-      "es": "Ismael Sarmiento · IsProfile · CV Online · Head of Data Management en Savana",
-      "en": "Ismael Sarmiento · IsProfile · CV Online · Head of Data Management at Savana"
+      "es": "Ismael Sarmiento · IsProfile · Head of Data Management en Savana",
+      "en": "Ismael Sarmiento · IsProfile · Head of Data Management at Savana"
     },
     "description": {
-      "es": "IsProfile, el CV Online de Ismael Sarmiento, Head of Data Management en Savana y antes Lead Data Engineer. Gobierno del dato, interoperabilidad clínica y calidad del dato con HL7 FHIR, OMOP CDM y la UNE 0081.",
-      "en": "IsProfile, the CV Online of Ismael Sarmiento, Head of Data Management at Savana and formerly Lead Data Engineer. Data governance, clinical interoperability and data quality with HL7 FHIR, OMOP CDM and UNE 0081."
+      "es": "IsProfile, el CV de Ismael Sarmiento, Head of Data Management en Savana y antes Lead Data Engineer. Gobierno del dato, interoperabilidad clínica y calidad del dato con HL7 FHIR, OMOP CDM y la UNE 0081.",
+      "en": "IsProfile, the CV of Ismael Sarmiento, Head of Data Management at Savana and formerly Lead Data Engineer. Data governance, clinical interoperability and data quality with HL7 FHIR, OMOP CDM and UNE 0081."
     },
     "homeUrl": "https://isuniverse.dev/"
   },
@@ -64,7 +64,7 @@
         "noMatch": "No tengo una respuesta exacta para eso en esta versión beta. Puedo responder sobre experiencia, capacidades, seguridad del asistente, docencia, IsGame, contacto o límites de privacidad."
       },
       "cv": {
-        "tag": "IsProfile · CV Online",
+        "tag": "IsProfile",
         "home": "Inicio",
         "enter": "Entrar al CV",
         "primaryNav": "Principal",
@@ -189,7 +189,7 @@
         "noMatch": "I do not have an exact answer for that in this beta version. I can answer about experience, capabilities, assistant safety, teaching, IsGame, contact, or privacy limits."
       },
       "cv": {
-        "tag": "IsProfile · CV Online",
+        "tag": "IsProfile",
         "home": "Home",
         "enter": "Enter the CV",
         "primaryNav": "Primary",

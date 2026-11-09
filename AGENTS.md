@@ -1,4 +1,4 @@
-# AGENTS.md — profile (IsProfile · CV Online)
+# AGENTS.md — profile (IsProfile)
 
 ## Parent
 
@@ -12,7 +12,7 @@ Sibling sites on the same origin (shared design system and standards):
 
 ## Purpose
 
-Entry point for agents working on IsProfile · CV Online (`https://isuniverse.dev/profile/`). Personal project of Ismael
+Entry point for agents working on IsProfile (`https://isuniverse.dev/profile/`). Personal project of Ismael
 Sarmiento; only the global L0 protocols apply (Plan al Milímetro before each task, close-out recap after).
 
 ## Source of truth

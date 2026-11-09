@@ -1,4 +1,4 @@
-/* CV Online — the PDF (tools/pdf.py) and printing from the browser: the web design on A4 (white paper, cream cards,
+/* IsProfile — the PDF (tools/pdf.py) and printing from the browser: the web design on A4 (white paper, cream cards,
    brand gold), every text open, nothing interactive and no repeated blocks. A4 is ~720 px wide, which would trigger
    the phone layout, so the print grid is set explicitly here. */
 /* no page margins: the paper colour reaches the edge; the body pads every page instead (clone repeats the padding

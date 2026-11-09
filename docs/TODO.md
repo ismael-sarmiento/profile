@@ -1,4 +1,4 @@
-# CV Online · pending
+# IsProfile · pending
 
 - Higher-resolution portrait (800 px or more) for the portada and the JSON-LD image; the current one is 264 × 264 px.
 - Verify that Cloudflare Web Analytics receives data for `/profile/` after the move.
