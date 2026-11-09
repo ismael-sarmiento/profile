@@ -239,7 +239,7 @@ def head():
 # the PDF / printed CV opens with the signature and the contact line (hidden on screen; css/print.css shows it)
 PRINT_HEAD = ('<div class="print-head" aria-hidden="true">'
               + SIG.replace('is-edge', 'pr-edge').replace('is-ink', 'pr-ink')
-              + '<p class="print-contact"><a href="mailto:ismaelantonio.professional@gmail.com">ismaelantonio.professional@gmail.com</a><br><a href="tel:+34613371874">+34 613 371 874</a> · <a href="https://wa.me/34613371874" rel="noopener">WhatsApp</a><br><a href="https://www.linkedin.com/in/ismael-sarmiento/" rel="noopener me">linkedin.com/in/ismael-sarmiento</a><br><a href="https://isuniverse.dev/profile/" data-i18n-href="ui.cv.printCvHref" rel="noopener">isuniverse.dev/profile/</a></p></div>')
+              + '<p class="print-contact"><a href="mailto:ismaelantonio.professional@gmail.com">ismaelantonio.professional@gmail.com</a><br><a href="tel:+34613371874">+34 613 371 874</a> · <a href="https://wa.me/34613371874" rel="noopener noreferrer">WhatsApp</a><br><a href="https://www.linkedin.com/in/ismael-sarmiento/" rel="noopener noreferrer me">linkedin.com/in/ismael-sarmiento</a><br><a href="https://isuniverse.dev/profile/" data-i18n-href="ui.cv.printCvHref" rel="noopener noreferrer">isuniverse.dev/profile/</a></p></div>')
 
 
 # the circuit lines of the brand (/assets/ds/circuit.css), the same two drawings as Inicio (portada tools/build.py):
@@ -329,7 +329,7 @@ def main():
     def chip(g, j):
         item = D['ecosystem']['groups'][g]['items'][j]
         label = T(f'ecosystem.groups.{g}.items.{j}.label') if isinstance(item['label'], dict) else e(item['label'])
-        return f'<li><a href="{e(item["href"])}" rel="noopener">{label}</a></li>' if item['href'] else f'<li>{label}</li>'
+        return f'<li><a href="{e(item["href"])}" rel="noopener noreferrer">{label}</a></li>' if item['href'] else f'<li>{label}</li>'
     eco = ''.join(f'<article class="card card--static eco reveal">{T(f"ecosystem.groups.{g}.title", "h3")}<ul class="chips">'
                   + ''.join(chip(g, j) for j in range(len(D['ecosystem']['groups'][g]['items']))) + '</ul></article>'
                   for g in range(len(D['ecosystem']['groups'])))
@@ -376,7 +376,7 @@ def main():
     icon = lambda name: f'<svg aria-hidden="true"><use href="/assets/ds/icons.svg#i-{name}"/></svg>'
     def way(label, name, text):
         i, x = items[label]
-        ext = ' target="_blank" rel="noopener"' if x['href'].startswith('http') else ''
+        ext = ' target="_blank" rel="noopener noreferrer"' if x['href'].startswith('http') else ''
         return f'<a class="btn" href="{e(x["href"])}" data-i18n-href="contact.items.{i}.href"{ext}>{icon(name)}{text}</a>'
     ways = way('WhatsApp', 'whatsapp', 'WhatsApp') + way('Email', 'mail', T('ui.cv.form.mail')) + way('LinkedIn', 'linkedin', 'LinkedIn')
     req = '<span class="req" aria-hidden="true">*</span>'
@@ -494,7 +494,7 @@ def main():
 
 def footer():
     items = {x['label']: (i, x) for i, x in enumerate(D['contact']['items']['es'])}
-    ext = lambda href: ' rel="noopener"' if href.startswith('http') else ''
+    ext = lambda href: ' rel="noopener noreferrer"' if href.startswith('http') else ''
     way = lambda label, text: (f'<a href="{e(items[label][1]["href"])}" data-i18n-href="contact.items.{items[label][0]}.href"'
                                f'{ext(items[label][1]["href"])}>{text}</a>')
     return f'''<footer class="footer">
@@ -504,11 +504,11 @@ def footer():
       <nav class="footer-links" aria-label="Ismael Sarmiento">
         <a href="/" data-i18n-href="ui.cv.homeHref">{T('ui.cv.home')}</a><a href="/academy/" data-i18n-href="ui.cv.isacademyHref">IsAcademy</a><a href="/game/" data-i18n-href="ui.cv.isgameHref">IsGame</a>
         {way('WhatsApp', 'WhatsApp')}{way('Email', T('ui.cv.form.mail'))}
-        <a href="{e(D['meta']['linkedin'])}" rel="noopener me">LinkedIn</a><a href="{e(D['meta']['github'])}" rel="noopener me">GitHub</a>
+        <a href="{e(D['meta']['linkedin'])}" rel="noopener noreferrer me">LinkedIn</a><a href="{e(D['meta']['github'])}" rel="noopener noreferrer me">GitHub</a>
         <a href="/privacy/" data-i18n-href="ui.cv.privacyHref">{T('ui.cv.privacyLabel')}</a>
       </nav>
       <a class="footer-top" href="#top">{T('ui.cv.top')}</a>
-      <p class="print-foot">{T('ui.cv.printOnline')}: <a href="https://isuniverse.dev/profile/" data-i18n-href="ui.cv.printCvHref" rel="noopener">isuniverse.dev/profile/</a> · IsAcademy: <a href="https://isuniverse.dev/academy/" data-i18n-href="ui.cv.printIsaHref" rel="noopener">isuniverse.dev/academy/</a></p>
+      <p class="print-foot">{T('ui.cv.printOnline')}: <a href="https://isuniverse.dev/profile/" data-i18n-href="ui.cv.printCvHref" rel="noopener noreferrer">isuniverse.dev/profile/</a> · IsAcademy: <a href="https://isuniverse.dev/academy/" data-i18n-href="ui.cv.printIsaHref" rel="noopener noreferrer">isuniverse.dev/academy/</a></p>
     </div>
   </footer>'''
 

@@ -8,7 +8,7 @@ export function initAssistant(data, i18n) {
     match: matcher(data[i18n.lang()].faq),
     onAction: ({ href }) => {
       if (href?.startsWith('#')) document.getElementById(href.slice(1))?.scrollIntoView({ block: 'start' });
-      else if (href) window.open(href, '_blank', 'noopener');   // WhatsApp and other sites open beside the CV
+      else if (href) window.open(href, '_blank', 'noopener,noreferrer');   // WhatsApp and other sites open beside the CV
     },
   });
   // Alan speaks the language of the page (labels, suggestions and knowledge)
