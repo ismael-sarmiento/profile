@@ -222,3 +222,6 @@ body.summary-mode .nav a[data-nav="story"], body.summary-mode .nav a[data-nav="c
 /* summary mode button: both labels are in the HTML (translated by i18n); the pressed state picks one */
 .view-btn .when-on, .view-btn[aria-pressed="true"] .when-off { display: none; }
 .view-btn[aria-pressed="true"] .when-on { display: inline; }
+
+/* F10: the kicker of a case follows its title (no label above a heading) */
+.case-kicker { margin: 6px 0 12px; font-size: 13px; font-weight: 600; letter-spacing: .02em; color: var(--gold-text); }

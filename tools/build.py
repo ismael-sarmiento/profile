@@ -307,7 +307,8 @@ def topbar():
 def section_head(eyebrow, title, intro=None, hid=None):
     h = f' id="{hid}"' if hid else ''
     i = T(intro, 'p', 'lead') if intro else ''
-    return f'<div class="section-head reveal">{T(eyebrow, "p", "eyebrow")}{T(title, "h2", extra=h)}{i}</div>'
+    # no label above the title (Impeccable; F10): the eyebrow argument is kept for the callers but not drawn
+    return f'<div class="section-head reveal">{T(title, "h2", extra=h)}{i}</div>'
 
 
 def more(inner, label):
@@ -334,7 +335,7 @@ def main():
                   for g in range(len(D['ecosystem']['groups'])))
     layers = ''.join(f'<li class="layer"><span class="node" aria-hidden="true"></span><div>{T(f"hero.layers.{i}.title", "h3")}{T(f"hero.layers.{i}.text", "p")}</div></li>'
                      for i in range(count('hero.layers')))
-    proofs = ''.join(f'<article class="card contribution reveal">{T("ui.labels.keyValue", "p", "eyebrow")}{T(f"hero.proofPoints.{i}.title", "h3")}{T(f"hero.proofPoints.{i}.body", "p")}</article>'
+    proofs = ''.join(f'<article class="card contribution reveal">{T(f"hero.proofPoints.{i}.title", "h3")}{T(f"hero.proofPoints.{i}.body", "p")}</article>'
                      for i in range(count('hero.proofPoints')))
     pillars = ''.join(f'<article class="pillar reveal">{T(f"summary.pillars.{i}.label", "h3")}{T(f"summary.pillars.{i}.text", "p")}</article>'
                       for i in range(count('summary.pillars')))
@@ -348,7 +349,7 @@ def main():
         rungs.append(f'<li class="rung{" rung-now" if now else ""}" data-step="{i}"><span class="rung-dot" aria-hidden="true"></span>'
                      f'{T(f"experience.spotlight.progression.{i}", "span", "rung-name")}{tag}</li>')
     ladder = ''.join(rungs)
-    cases = ''.join(f'''<article class="card case reveal" id="{e(D["case_studies"]["items"]["es"][i]["id"])}">{T(f"case_studies.items.{i}.kicker", "p", "eyebrow")}{T(f"case_studies.items.{i}.title", "h3")}
+    cases = ''.join(f'''<article class="card case reveal" id="{e(D["case_studies"]["items"]["es"][i]["id"])}">{T(f"case_studies.items.{i}.title", "h3")}{T(f"case_studies.items.{i}.kicker", "p", "case-kicker")}
           {T(f"case_studies.items.{i}.summary", "p")}{more(f'<ul class="ticks">{li(f"case_studies.items.{i}.outcomes")}</ul>', 'ui.cv.outcomes')}</article>'''
                     for i in range(count('case_studies.items')))
     # Promotions keep their text readable while two independent connectors draw the career in order.
@@ -385,7 +386,6 @@ def main():
       {CIRCUIT_HERO}
       <div class="container hero-grid">
         <div class="hero-copy stagger">
-          <p class="eyebrow reveal">Ismael Sarmiento · IsProfile</p>
           <h1 id="hero-title" class="reveal">{T('hero.headlinePrimary', 'span', 'h1-main')} {T('hero.headlineSecondary', 'span', 'h1-sub')}</h1>
           {T('hero.subtitle', 'p', 'lead reveal')}
           <ul class="ticks hero-facts reveal">{li('hero.quickFacts')}</ul>
@@ -398,7 +398,6 @@ def main():
           <div class="hero-id"><a class="portrait hero-portrait" href="{e(D['meta']['linkedin'])}" target="_blank" rel="noopener noreferrer" {A('aria-label', 'ui.cv.portraitLinkedinLabel')}><img src="/assets/brand/ismael.jpg" width="264" height="264" alt="Ismael Sarmiento" fetchpriority="high"></a>
             <div><p class="hero-id-name">Ismael Sarmiento</p>{T('hero.portraitCaption', 'p', 'hero-id-role')}</div></div>
           <div class="card card--static">
-            {T('ui.labels.overview', 'p', 'eyebrow')}
             {T('hero.trajectoryHeading', 'h2', 'panel-title')}
             {ps('hero.trajectoryIntro', 0, 1)}
             {more(ps('hero.trajectoryIntro', 1), 'ui.cv.more')}
@@ -471,7 +470,7 @@ def main():
     <section class="section" id="contact" data-section="contact" aria-labelledby="contact-title">
       <div class="container">
         <div class="contact-card reveal">
-          {T('contact.heading', 'p', 'eyebrow')}{T('ui.cv.form.title', 'h2', extra=' id="contact-title"')}{T('contact.intro', 'p', 'lead')}
+          {T('ui.cv.form.title', 'h2', extra=' id="contact-title"')}{T('contact.intro', 'p', 'lead')}
           <form class="lead-form" id="cvForm" novalidate>
             <div class="f-row">
               <label><span class="lbl">{T('ui.cv.form.name')} {req}</span><input name="name" autocomplete="name" required maxlength="80"></label>
