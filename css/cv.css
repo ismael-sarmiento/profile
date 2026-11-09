@@ -6,7 +6,7 @@
 .hero-panel.reveal { --d: .36s; }
 .print-head, .print-foot { display: none; }
 /* the PDF, one click away from the bar: a small gold chip; on hover it fills softly and the arrow drops */
-.pdf-chip { display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px 0 9px; margin-left: 2px; align-self: center;
+.pdf-chip { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px 0 9px; margin-left: 2px; align-self: center;
   border-radius: 999px; border: 1px solid var(--gold); color: var(--gold-text); font: 600 12px/1 var(--font-sans); letter-spacing: .08em;
   text-decoration: none; transition: background .25s ease, box-shadow .25s ease, transform .2s var(--ease-out); }
 .pdf-chip svg { flex: none; width: 14px; height: 14px; transition: transform .3s var(--ease-out); }
