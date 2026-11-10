@@ -53,7 +53,9 @@ El sistema de diseño compartido (tokens, componentes, idiomas, firma y Alan) vi
 
    Con el sitio servido en local, regenera los PDF: `python3 tools/pdf.py http://127.0.0.1:8777/`.
 
-3. Sírvelo junto con la portada, que aporta `/assets/ds/`: una carpeta con la portada en la raíz y este repositorio en `cv/`.
+3. Sírvelo junto con la portada, que aporta `/assets/ds/`: una carpeta temporal con la portada en la raíz y este repositorio en `profile/` (y `academy/`, `game/` al probar el conjunto). Desde la raíz del workspace: `python3 kit/tools/serve_nostore.py CARPETA_TEMPORAL 8804`; abre `http://127.0.0.1:8804/profile/`.
+
+El idioma compartido no cambia hasta recibir un diccionario válido; rechaza errores HTTP y respuestas anteriores y permite reintentar desde el botón con un aviso accesible. Las pruebas del módulo compartido viven en `../ismael-sarmiento.github.io/tools/qa/i18n.test.mjs`.
 
 ## Despliegue
 

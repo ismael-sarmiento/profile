@@ -139,7 +139,8 @@
         },
         "privacyLabel": "Privacidad",
         "privacyHref": "/privacy/",
-        "portraitLinkedinLabel": "Ver el perfil de Ismael Sarmiento en LinkedIn (se abre en una pestaña nueva)"
+        "portraitLinkedinLabel": "Ver el perfil de Ismael Sarmiento en LinkedIn (se abre en una pestaña nueva)",
+        "langError": "No hemos podido cargar el idioma. Vuelve a intentarlo con el botón de idioma."
       }
     },
     "en": {
@@ -264,7 +265,8 @@
         },
         "privacyLabel": "Privacy",
         "privacyHref": "/privacy/?lang=en",
-        "portraitLinkedinLabel": "View Ismael Sarmiento’s LinkedIn profile (opens in a new tab)"
+        "portraitLinkedinLabel": "View Ismael Sarmiento’s LinkedIn profile (opens in a new tab)",
+        "langError": "We could not load the language. Please try the language button again."
       }
     }
   },

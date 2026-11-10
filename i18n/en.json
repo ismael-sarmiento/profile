@@ -109,6 +109,7 @@
 "ui.cv.privacyLabel": "Privacy",
 "ui.cv.privacyHref": "/privacy/?lang=en",
 "ui.cv.portraitLinkedinLabel": "View Ismael Sarmiento’s LinkedIn profile (opens in a new tab)",
+"ui.cv.langError": "We could not load the language. Please try the language button again.",
 "loader_milestones.0": "2017 · Autana — First steps in data and analytics",
 "loader_milestones.1": "2018 · BBVA Next — Cloud data for funds and pensions",
 "loader_milestones.2": "2020 · Santander — High-demand batch and streaming",

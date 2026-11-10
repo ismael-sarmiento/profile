@@ -301,6 +301,7 @@ def topbar():
     </div>
     <div class="read-progress"></div>
     <div class="summary-notice" role="status"><div class="container summary-notice-row">{T('ui.cv.summaryNotice', 'p')}<button class="btn btn-sm btn-arrow" type="button" data-action="view">{T('ui.actions.fullMode')}</button></div></div>
+    {T('ui.cv.langError', 'p', 'language-status container', ' id="languageStatus" role="status" hidden')}
   </header>'''
 
 

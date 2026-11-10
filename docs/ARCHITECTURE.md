@@ -56,7 +56,7 @@
 
 - Colours only through design-system tokens; light and dark checked on every change.
 - Content changes go to `data/content.json` (both languages), then rebuild with a new version.
-- Run `tools/qa/flows.js` in the browser console (local site) before publishing, and `tools/pdf.py` after content changes
+- Run `node ../kit/tools/console_flow.mjs http://127.0.0.1:8804/profile/ tools/qa/flows.js --block cloudflareinsights.com --settle 3000` before publishing, and `tools/pdf.py` after content changes
   (the four PDFs are committed: `ismael-sarmiento-cv[-en][-dark].pdf`; the light names never change). Paper has no
   page margins: `css/print.css` pads every page of the body (`box-decoration-break: clone`), so the dark PDF bleeds.
 - Private working notes (positioning, decisions, interview preparation) live in `.private/PROJECT_CONTEXT.md`, never published.
