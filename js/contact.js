@@ -15,7 +15,7 @@ export function initContact(i18n) {
       return {
         Resumen: `${v('name')} te escribe desde IsProfile.${v('company') ? ` Empresa: ${v('company')}.` : ''} Idioma: ${language}.`,
         Nombre: v('name'), Email: v('email'), Empresa: v('company') || '—', Mensaje: v('message'), Idioma: language,
-        _subject: `Nuevo contacto desde el CV — ${v('name')}`, _replyto: v('email'),
+        _subject: `Nuevo contacto desde IsProfile — ${v('name')}`, _replyto: v('email'),
       };
     },
   });
