@@ -79,8 +79,14 @@ DS_MODULES = ['/assets/ds/ds.js', '/assets/ds/frame-guard.js', '/assets/ds/views
               '/assets/ds/avatar.js', '/assets/ds/assistant.js']
 MODULES = DS_MODULES + sorted(f'/profile/js/{f.name}' for f in (ROOT / 'js').glob('*.js'))
 IMPORT_MAP = json.dumps({'imports': {m: f'{m}?v={VERSION}' for m in MODULES}}, separators=(',', ':'))
+# Prefetch (HTML only, no script runs, so no visit is counted) of a same-origin page when the visitor is about to open
+# it (hover or touch start: «moderate»). Not PDFs (the CV), downloads, nofollow or new-tab links. Chrome and Edge;
+# elsewhere nothing happens. Modern Web Guidance: improve-next-page-load-performance. Same rule as the portada.
+SPECULATION = json.dumps({'prefetch': [{'where': {'and': [{'href_matches': '/*'}, {'not': {'href_matches': '/*.pdf'}},
+                         {'not': {'selector_matches': '[download], [rel~="nofollow"], [target="_blank"]'}}]}, 'eagerness': 'moderate'}]},
+                         separators=(',', ':'))
 CSP = ("default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://challenges.cloudflare.com "
-       f"'sha256-{sha(BOOT)}' 'sha256-{sha(IMPORT_MAP)}'; style-src 'self'; img-src 'self' data:; font-src 'self'; "
+       f"'sha256-{sha(BOOT)}' 'sha256-{sha(IMPORT_MAP)}' 'sha256-{sha(SPECULATION)}'; style-src 'self'; img-src 'self' data:; font-src 'self'; "
        "connect-src 'self' https://cloudflareinsights.com https://isa-forms.ismaelantonio-professional.workers.dev; "
        "frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'none'; form-action 'none'")
 
@@ -193,7 +199,9 @@ def head():
   <meta name="description" content="{e(m['description']['es'])}">
   <meta name="author" content="Ismael Sarmiento">
   <meta name="keywords" content="Ismael Sarmiento, Head of Data Management, Lead Data Engineer, Savana, CDMP, DAMA, GitHub, gobierno del dato, data governance, HL7 FHIR, OMOP CDM, calidad del dato, UNE 0081">
-  <meta name="theme-color" content="#0b1026">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fbf7ef" media="(prefers-color-scheme: light)" data-theme-color="light">
+  <meta name="theme-color" content="#0b1026" media="(prefers-color-scheme: dark)" data-theme-color="dark">
   <link rel="canonical" href="{BASE}">
   <link rel="alternate" hreflang="es" href="{BASE}">
   <link rel="alternate" hreflang="en" href="{BASE}?lang=en">
@@ -231,6 +239,7 @@ def head():
   <link rel="stylesheet" href="{v('/profile/css/cv.css')}">
   <link rel="stylesheet" href="{v('/profile/css/print.css')}" media="print">
   <script type="importmap">{IMPORT_MAP}</script>
+  <script type="speculationrules">{SPECULATION}</script>
   <script type="module" data-startup-entry src="{v('/profile/js/app.js')}"></script>
   <script type="application/ld+json">{json.dumps(structured_data(), ensure_ascii=False)}</script>
   <script type="application/json" id="cv-data">{data_block}</script>

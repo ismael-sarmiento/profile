@@ -12,9 +12,14 @@
   document.querySelector('.summary-notice [data-action=view]').click(); await sleep(80);
   ok('the notice button goes back to the full CV', !document.body.classList.contains('summary-mode'));
   const d = document.querySelector('details.more'); d.querySelector('summary').click(); await sleep(50); ok('read more opens', d.open); d.querySelector('summary').click();
-  const before = document.documentElement.dataset.theme; document.querySelector('.topbar [data-action=theme]').click(); await sleep(50);
-  ok('theme toggles and is remembered', before !== document.documentElement.dataset.theme && localStorage.getItem('isa-theme') === document.documentElement.dataset.theme);
-  document.querySelector('.topbar [data-action=theme]').click();
+  // the shared theme button (/assets/ds/ds.js): first press = the other scheme, remembered; second press = back to
+  // the system scheme, forgotten (Modern Web Guidance, dark-mode-toggle)
+  localStorage.removeItem('isa-theme'); delete document.documentElement.dataset.theme;
+  const systemTheme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  document.querySelector('.topbar [data-action=theme]').click(); await sleep(50);
+  ok('theme toggles and is remembered', document.documentElement.dataset.theme !== systemTheme && localStorage.getItem('isa-theme') === document.documentElement.dataset.theme);
+  document.querySelector('.topbar [data-action=theme]').click(); await sleep(50);
+  ok('pressing again follows the system and forgets the choice', !document.documentElement.dataset.theme && localStorage.getItem('isa-theme') === null);
   ok('Alan lives only in the floating button (no section of its own, as on Inicio and IsAcademy)', !document.getElementById('assistant') && !!document.querySelector('.assistant-fab'));
   document.querySelector('.assistant-fab').click(); await sleep(500);
   const p = document.getElementById('assistantPanel'); ok('the floating button opens the panel with four suggestions', !p.hidden && p.querySelectorAll('.chip').length === 4);
