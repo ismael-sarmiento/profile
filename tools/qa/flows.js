@@ -52,8 +52,11 @@
   ok('every timeline stop sits on the rail', (() => { const r = document.querySelector('.tl-rail').getBoundingClientRect(), c = r.left + r.width / 2;
     return [...document.querySelectorAll('.tl-stop')].every(s => { const b = s.getBoundingClientRect(); return Math.abs(b.left + b.width / 2 - c) < 1; }); })());
   ok('contact without the extra «También me encuentras» links', !document.querySelector('.contact-more') && !/También me encuentras/.test(document.body.innerText));
-  ok('eight intro milestones, Savana last in three steps', (() => { const s = JSON.parse(document.getElementById('cv-data')?.textContent || 'null')?.es?.steps || [];
-    return s.length === 8 && s.slice(-3).every(x => x.includes('Savana ·')) && /IsAcademy/.test(s[4]); })());
+  // IsAcademy left the intro on 26/11/2026 (owner): the years only go up and the intro ends on the current role;
+  // IsAcademy stays in the timeline as «En paralelo»
+  ok('seven intro milestones in order, Savana last in three steps', (() => { const s = JSON.parse(document.getElementById('cv-data')?.textContent || 'null')?.es?.steps || [];
+    const years = s.map(x => Number(x.slice(0, 4)));
+    return s.length === 7 && s.slice(-3).every(x => x.includes('Savana ·')) && !s.some(x => /IsAcademy/.test(x)) && years.every((y, i) => !i || y >= years[i - 1]); })());
   ok('ladder: three rungs, current on top', document.querySelectorAll('.rung').length === 3 && document.querySelector('.rung-now'));
   ok('five ecosystem groups', document.querySelectorAll('.eco').length === 5);
   ok('external links rel=noopener', [...document.querySelectorAll('a[href^="http"]')].every(a => /noopener/.test(a.rel)));
